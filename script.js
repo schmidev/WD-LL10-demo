@@ -29,7 +29,20 @@ function filterEmojiComments() {}
 /* Level Ups */
 
 /* Level Up - Task 8 - Complete the filterList function according to the TODO */
-function filterList(searchTerm, searchUsers) {}
+function filterList(searchTerm, searchUsers) {
+  // This function returns a new array with comments that match the searchTerm
+  // It checks both the username and the comment text
+  // searchUsers is not used in this version, but could be used to filter only usernames if needed
+  return comments.filter(comment => {
+    // Split the comment into username and text
+    const parts = comment.split(": ");
+    const username = parts[0];
+    const text = parts[1] || "";
+    // Check if searchTerm is in the username or the comment text (case-insensitive)
+    return username.toLowerCase().includes(searchTerm.toLowerCase()) ||
+           text.toLowerCase().includes(searchTerm.toLowerCase());
+  });
+}
 
 /* Level Up - Task 9 - Compelte the task according to the TODO */
 
