@@ -9,10 +9,19 @@ function addComment(username, comment, addToStart) {}
 function showRandomEmoji() {}
 
 /* Task 5 - Complete the function according to the TODO */
-function reverseOrder() {}
+function reverseOrder() {
+  // This function reverses the order of the comments array
+  // It uses the built-in reverse() method
+  comments.reverse();
+}
 
 /* Task 6 - Complete the function according to the TODO */
-function removeComment(index) {}
+function removeComment(index) {
+  if (index > -1) {
+    // only splice array when item is found
+    comments.splice(index, 1); // 2nd parameter means remove one item only
+  }
+}
 
 /* Task 7 - Complete the function according to the TODO */
 function filterEmojiComments() {}
